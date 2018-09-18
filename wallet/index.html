@@ -9,67 +9,77 @@
 <body>
 <div class="container p-2">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="EOS Account Name" aria-label="Recipient's username"
+        <input type="text" class="form-control" id="accountName" placeholder="EOS Account Name" aria-label="Recipient's username"
                aria-describedby="button-addon2">
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">조회</button>
+            <button class="btn btn-outline-secondary" onclick="getAccountInfo()" type="button" id="button-addon2">조회</button>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="display: none" id="info">
         <h2 class="col-12 text-center">
             sdfjenfjwlndj12
         </h2>
-        <div class="col-6">
-            <div class="row p-2">
-                <div class="col-3">Total</div>
-                <div class="col-9">3844938 EOS</div>
+        <div class="col-12 row">
+            <div class="col-6">
+                <div class="row p-2">
+                    <div class="col-3">Total</div>
+                    <div class="col-9">3844938 EOS</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-3">Unstake</div>
+                    <div class="col-9">3844938 EOS</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-3">Stake</div>
+                    <div class="col-9">3844938 EOS</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-3">Refund</div>
+                    <div class="col-9">3844938 EOS</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-3">CPU</div>
+                    <div class="col-9">7461 up / 112229 up (1.0000 EOS)</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-3">NET</div>
+                    <div class="col-9">7461 byte / 112229 byte (1.0000 EOS)</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-3">RAM</div>
+                    <div class="col-9">3746 byte / 24954 byte</div>
+                </div>
             </div>
-            <div class="row p-2">
-                <div class="col-3">Unstake</div>
-                <div class="col-9">3844938 EOS</div>
-            </div>
-            <div class="row p-2">
-                <div class="col-3">Stake</div>
-                <div class="col-9">3844938 EOS</div>
-            </div>
-            <div class="row p-2">
-                <div class="col-3">Refund</div>
-                <div class="col-9">3844938 EOS</div>
-            </div>
-            <div class="row p-2">
-                <div class="col-3">CPU</div>
-                <div class="col-9">7461 up / 112229 up (1.0000 EOS)</div>
-            </div>
-            <div class="row p-2">
-                <div class="col-3">NET</div>
-                <div class="col-9">7461 byte / 112229 byte (1.0000 EOS)</div>
-            </div>
-            <div class="row p-2">
-                <div class="col-3">RAM</div>
-                <div class="col-9">3746 byte / 24954 byte</div>
+            <div class="col-6">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">TO</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="TO">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">수량</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="수량">
+                    </div>
+                    <div class="form-group">
+                        <label for="memo">Memo</label>
+                        <textarea class="form-control" id="memo" placeholder="Memo"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="privateKey">Private Key</label>
+                        <input type="text" class="form-control" id="privateKey" placeholder="Private Key">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
-        <div class="col-6">
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">TO</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="TO">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">수량</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="수량">
-                </div>
-                <div class="form-group">
-                    <label for="memo">Memo</label>
-                    <textarea class="form-control" id="memo" placeholder="Memo"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="privateKey">Private Key</label>
-                    <input type="text" class="form-control" id="privateKey" placeholder="Private Key">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+    </div>
+    <div class="text-danger" style="display: none" id="error">
+        <h3>ERROR</h3>
+        <div id="errorMessage"></div>
+    </div>
+    <div class="text-success" style="display: none">
+        <h3>SUCCESS</h3>
+        <div>fwlkefnjkg;ergjnwrlkfnmwekfnmwek;lfmnweklfnwelkfn</div>
     </div>
 </div>
 
