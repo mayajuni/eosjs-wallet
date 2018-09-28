@@ -51,22 +51,22 @@
             <div class="col-6">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">TO</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="TO">
+                        <label for="to">TO *</label>
+                        <input type="text" class="form-control" id="to" aria-describedby="to" placeholder="TO">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">수량</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="수량">
+                        <label for="quantity">수량 *</label>
+                        <input type="number" class="form-control" id="quantity" placeholder="수량">
                     </div>
                     <div class="form-group">
                         <label for="memo">Memo</label>
                         <textarea class="form-control" id="memo" placeholder="Memo"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="privateKey">Private Key</label>
+                        <label for="privateKey">Private Key *</label>
                         <input type="text" class="form-control" id="privateKey" placeholder="Private Key">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="transfer()" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
@@ -75,9 +75,9 @@
         <h3>ERROR</h3>
         <div id="errorMessage"></div>
     </div>
-    <div class="text-success" style="display: none">
+    <div class="text-success" style="display: none" id="success">
         <h3>SUCCESS</h3>
-        <div>fwlkefnjkg;ergjnwrlkfnmwekfnmwek;lfmnweklfnwelkfn</div>
+        <div id="successMessage"></div>
     </div>
 </div>
 

@@ -41,3 +41,34 @@ function getAccountInfo() {
         document.getElementById('errorMessage').innerHTML = 'EOS Account Name을 입력해주세요.';
     }
 }
+
+function transfer() {
+    document.getElementById('error').style.display = 'none';
+    document.getElementById('success').style.display = 'none';
+
+    const to = document.getElementById('to').value;
+    const quantity = document.getElementById('quantity').value;
+    const memo = document.getElementById('memo').value;
+    const privateKey = document.getElementById('privateKey').value;
+    const from = document.getElementById('account').innerHTML;
+
+    if (to && quantity && privateKey && from) {
+        config.keyProvider = privateKey;
+
+        Eos(config).transaction('eosio.token', (coin) => {
+            coin.transfer(from, to, Number(quantity).toFixed(4) + ' EOS', memo);
+        })
+            .then(result => {
+                document.getElementById('success').style.display = 'block';
+                document.getElementById('successMessage').innerHTML =
+                    '<a href="https://tools.cryptokylin.io/#/tx/' + result.transaction_id + '" target="_blank">' + result.transaction_id + '</a>';
+            })
+            .catch(e => {
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('errorMessage').innerHTML = e.message;
+            });
+    } else {
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('errorMessage').innerHTML = '필수값을 입력해주세요.';
+    }
+}
