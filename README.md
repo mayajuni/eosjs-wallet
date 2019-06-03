@@ -3,6 +3,11 @@
 인프런 `EOSJS를 이용한 EOS 심플 월렛 만들기` 강의에 대한 소스 코드 입니다.
 
 
+## eosjs 설치
+```bash
+npm install --save eosjs@16.0.9
+```
+
 
 ## 설명
 
