@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "eosjs": "^16.0.2"
+    "eosjs": "^22.1.0"
   }
 }
